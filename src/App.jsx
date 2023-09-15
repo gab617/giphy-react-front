@@ -3,7 +3,6 @@ import './App.css'
 import Home from './components/Home'
 import { Link, Route } from "wouter"
 import SearchResults from './components/SearchResults'
-import Context from './context/StaticContext'
 import { GifsContextProvider } from './context/GifsContexs'
 
 /* Al iniciar la app el primer componente que va a renderizar es Home ya que se 
