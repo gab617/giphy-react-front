@@ -1,0 +1,7 @@
+.list-gifs {
+    display: flex;
+    flex-wrap: wrap;
+    /* Envuelve los elementos si no caben en una fila */
+    justify-content: space-between;
+    /* Espacio entre elementos */
+}

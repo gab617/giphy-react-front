@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(to bottom, #5d1b1b, #00FF00);
+    /* 
+      El gradiente va de arriba hacia abajo (to bottom).
+      #000000 es el color negro.
+      #00FF00 es el color verde.
+    */
+    background-size: cover; /* Ajusta el tamaño del fondo para cubrir todo el viewport */
+    background-attachment: fixed; /* Fija el fondo para que no se desplace con el contenido */
+  }
+  
+  

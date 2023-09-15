@@ -1,0 +1,19 @@
+.Gif img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.Gif h4 {
+    margin: 0;
+}
+
+.Gif{
+    width: calc(33.33% - 20px);
+    /* Ancho de los elementos, con espacio entre ellos */
+    margin-bottom: 1em;
+    /* Espacio entre filas de elementos */
+    background-color: #2d4f0c46;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Incluye el relleno en el ancho del elemento */
+}
