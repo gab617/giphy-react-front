@@ -5,6 +5,8 @@ import { useGifs } from '../../hooks/useGifs'
 import Gif from '../Gif'
 import LastSearch from './LastSearch'
 import './style.css'
+import './Trending.css'
+import { Trending } from './Trending'
 
 
 const POPULAR_GIFS = ['Messi', 'Matrix', 'Venezuela', 'Condorito', 'Power Rangers']
@@ -13,7 +15,7 @@ export default function Home() {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation() //
 
-    const { loading, gifs } = useGifs()
+    const { loading, gifs, gifsTrending } = useGifs()
 
     const handleSubmit = evt => {
         evt.preventDefault()
@@ -51,7 +53,12 @@ export default function Home() {
                     ))}
                 </ul>
             </div>
-            <LastSearch gifs={gifs}></LastSearch> {/* Componente unico en la HOME por ahora */}
+
+            <Trending
+                gifsTrending={gifsTrending} />
+
+{/*             <LastSearch
+                 gifs={gifs}/> */}
         </div>
     )
 }

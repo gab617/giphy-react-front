@@ -19,7 +19,7 @@ para luego ser agregado a la url en el campo limit = -cantidad deseada de objeto
 
 
 
-export default function getGifs({ keyword }) { //por defecto array vacio o keyword
+export function getGifs({ keyword }) { //por defecto array vacio o keyword
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`
     /* const apiURLexpress = `http://localhost:3000/obtenerDatos/messi` */
     const apiURLexpressRenderServices = `https://giphy617.onrender.com/obtenerDatos/${keyword}` /* Api almacenada en render.com */
@@ -28,11 +28,27 @@ export default function getGifs({ keyword }) { //por defecto array vacio o keywo
         .then(response => {
             const { data } = response
             const gifs = data.map(image => {
+                const { images, title, id } = image
+                const { url } = images.downsized_medium
+                return { title, id, url }
+            })
+            console.log('GIFFS  ', gifs)
+            return gifs
+        })
+}
+
+export function getGifsTrending() {
+    const apiUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`
+    return fetch(apiUrl)
+        .then(res => res.json())
+        .then(response => {
+            const { data } = response
+            const gifs = data.map(image =>{
                 const {images, title, id} = image
                 const {url} = images.downsized_medium
-                return {title, id, url}
+                return { title, id, url }
             })
-            console.log('GIFFS  ',gifs)
+            console.log('TRENDING GIFS: ', gifs)
             return gifs
         })
 }

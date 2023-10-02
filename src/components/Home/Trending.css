@@ -1,0 +1,15 @@
+#Trending{
+    height: 15vh;
+}
+
+#Trending ul{
+    height: 100%;
+    display: flex;
+}
+#Trending li{
+    height: 100%;
+}
+
+#Trending img{
+    height: 100%;
+}
