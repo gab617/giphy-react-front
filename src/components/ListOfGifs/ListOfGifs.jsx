@@ -12,7 +12,8 @@ function ListOfGifs({ gifs }) {
                     key={id}
                     title={title}
                     id={id}
-                    url={url} />
+                    url={url} 
+                    />
             })}
         </div>
     )

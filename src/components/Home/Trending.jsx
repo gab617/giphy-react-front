@@ -1,50 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Gif from "../Gif";
 
-export function Trending({ gifsTrending }) {
+
+
+export function Trending({ gifsTrending, loading }) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [visibleGifs, setvisibleGifs] = useState(gifsTrending)
 
-    const previousGif = (visGifs) => {
-        let newIndex = currentIndex === 0 ? visGifs.length - 1 : currentIndex - 1
-        console.log(currentIndex)
+    const previousGif = () => {
+        let newIndex = currentIndex === 0 ? gifsTrending.length - 1 : currentIndex - 1
         setCurrentIndex(newIndex);
-        setvisibleGifs(gifsTrending.slice(currentIndex, currentIndex + 5))
     };
 
-    const nextGif = (visGifs) => {
-        console.log(visGifs)
-        let newIndex = currentIndex === visGifs.length - 1 ? 0 : currentIndex + 1
-        console.log(currentIndex)
+    /* verifica si currentIndex es el final del array, si lo es, el nuevo indice va a ser cero, si no, se le suma uno ya 
+    que se sigue navegando dentro de los limites del arry  
+    *arma un primer slice con currentIndex y toma los siguientes 5 elementos
+    *remaininCount verifica si el primer slice tiene 5 elementos, en este caso la cantidad que queremos mostrar
+    si es menor a 5, quiere decir que tomo elementos hasta toparse con el final del array por que a partir del principio
+    o sea desde el indice cero, toma los elementos que faltan para completar los 5 elementos deseados.[...firstSlice, ...secondSlice] */
+
+    const nextGif = () => {
+        let newIndex = currentIndex === gifsTrending.length - 1 ? 0 : currentIndex + 1
         setCurrentIndex(newIndex);
-        setvisibleGifs(gifsTrending.slice(currentIndex, currentIndex + 5))
     };
 
-    // Componente para el carrusel
-    function Carousel() {
-        return (
+    return (
+        <div id="Trending">
+            {
+                <div id="trending-cont" className="fade-in" >
+                    {
+                        gifsTrending[currentIndex] && gifsTrending[currentIndex].map(gif => {
+                            return (
+                                <Gif
+                                    key={gif.id}
+                                    className={"fade-in"}
+                                    title={gif.title}
+                                    id={gif.id}
+                                    url={gif.url}
+                                />
+                            )
+                        })
+                    }
+
+                </div>
+            }
             <div className="carousel">
                 <button onClick={previousGif}>Anterior</button>
                 <button onClick={nextGif}>Siguiente</button>
             </div>
-        );
-    }
-
-    return (
-        <div id="Trending">
-            <ul>
-                {
-                    visibleGifs.map(gif => (
-                        <li key={gif.id}>
-                            <img src={gif.url} alt="" />
-                        </li>
-                    ))
-                }
-            </ul>
-            <div className="carousel">
-                <button onClick={() => previousGif(gifsTrending)}>Anterior</button>
-                <button onClick={() => nextGif(gifsTrending)}>Siguiente</button>
-            </div>
-
         </div>
     )
 }

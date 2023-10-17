@@ -27,29 +27,47 @@ export function getGifs({ keyword }) { //por defecto array vacio o keyword
         .then(res => res.json())
         .then(response => {
             const { data } = response
+            /* console.log(data) */ //10gifs por defecto para mostrar al inicio
             const gifs = data.map(image => {
                 const { images, title, id } = image
                 const { url } = images.downsized_medium
                 return { title, id, url }
             })
-            console.log('GIFFS  ', gifs)
+            /*             console.log('GIFFS  ', gifs) */
             return gifs
         })
 }
 
+/* la cantidad debe ser multiplo de los gifs q se mestran en pantalla */
+
 export function getGifsTrending() {
-    const apiUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`
+    const apiUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=28`
     return fetch(apiUrl)
         .then(res => res.json())
         .then(response => {
             const { data } = response
-            const gifs = data.map(image =>{
-                const {images, title, id} = image
-                const {url} = images.downsized_medium
+            const gifs = data.map(image => {
+                const { images, title, id } = image
+                const { url } = images.preview_gif
                 return { title, id, url }
             })
-            console.log('TRENDING GIFS: ', gifs)
+            /*             console.log('TRENDING GIFS: ', gifs) */
             return gifs
         })
 }
 
+export function getArtists(){
+    const apiUrl = `https://giphy.com/api/v4/artists/?api_key=${apiKey}filter=&freelance=false&order=desc&sort=updatetime`
+    return fetch (apiUrl)
+    .then(res => res.json())
+    .then(response =>{
+        const artists = response.results.map((artist) =>{
+            console.log(response)
+            const {display_name, id} = artist
+            const {avatar_url} = artist.user
+            const {url} = artist.featured_gif.images.preview_gif
+            return {id, display_name, avatar_url, url}
+        })
+        return artists
+    })
+}

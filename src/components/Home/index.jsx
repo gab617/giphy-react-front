@@ -7,6 +7,7 @@ import LastSearch from './LastSearch'
 import './style.css'
 import './Trending.css'
 import { Trending } from './Trending'
+import { Artists } from './Artists/Artists'
 
 
 const POPULAR_GIFS = ['Messi', 'Matrix', 'Venezuela', 'Condorito', 'Power Rangers']
@@ -15,7 +16,7 @@ export default function Home() {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation() //
 
-    const { loading, gifs, gifsTrending } = useGifs()
+    const { loading, gifs, gifsTrending, artists } = useGifs()
 
     const handleSubmit = evt => {
         evt.preventDefault()
@@ -32,7 +33,6 @@ export default function Home() {
     cambiar el link actual a search/ segudio de la keyword asi sea aignada 
     mediante el formulario o clickeada entre las opcionas ya definidas y listas para elegir
     */
-
     return (
         <div className='Home'>
             <div id='search-home'>
@@ -53,12 +53,25 @@ export default function Home() {
                     ))}
                 </ul>
             </div>
+            <div id='tr-home'>
+                <h1>Trending</h1>
+                <Trending
+                    gifsTrending={gifsTrending}
+                    loading={loading}
+                />
+            </div>
 
-            <Trending
-                gifsTrending={gifsTrending} />
+            <div id='art-home'>
+                <h1>Artists</h1>
+                <Artists
+                    artists={artists}
+                />
+            </div>
 
-{/*             <LastSearch
-                 gifs={gifs}/> */}
+
+
+            <LastSearch
+                gifs={gifs} />
         </div>
     )
 }

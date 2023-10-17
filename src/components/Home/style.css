@@ -17,7 +17,7 @@
     /* Redondea los bordes del elemento */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
     /* Propiedad box-shadow */
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     padding: 10px;
 }
 
@@ -55,7 +55,7 @@ a {
 }
 
 button {
-    padding: 10px 20px;
+    padding: .5em .5em;
     background-color: #007BFF;
     /* Color de botón */
     color: #fff;
@@ -64,6 +64,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: .2em;
 }
 
 button:hover {
@@ -96,4 +97,29 @@ li {
 /* Añadir un margen derecho a todos los elementos excepto al último para evitar que se superpongan */
 li:last-child {
     margin-right: 0;
+}
+
+#tr-home{
+    min-width: 80%;
+    max-width: 81%;
+    display: flex;
+    flex-direction: column;
+}
+
+#tr-home h1{
+    text-align: start;
+    margin: 0;
+}
+
+#art-home{
+    min-width: 80%;
+    max-width: 81%;
+    display: flex;
+    flex-direction: column;
+}
+
+#art-home h1{
+    text-align: start;
+    margin: 0;
+
 }

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react'
-import { getGifs, getGifsTrending } from '../services/getGifs'
+import { getArtists, getGifs, getGifsTrending } from '../services/getGifs'
 /* LocalStorage utilizado para guardar la ultima keyword utilizada si existiese
 primera vez sera nulo, una vez guardado el dato en el localstorage
 a menos que sea reiniciada la app po codigo fuente o se borre el localstorage 
@@ -16,22 +16,41 @@ export function useGifs({ keyword } = { keyword: null }) {
     const [loading, setLoading] = useState(false)
     const [gifs, setGifs] = useState([])
     const [gifsTrending, setGifsTrending] = useState([])
+    const [artists, setArtists] = useState([])
 
+
+    /* Me trae los links de categoria trending en partes de a 5 en este caso para mostrar de a 7 elementos */
     useEffect(() => {
         console.log('TRENDING LOAD')
 
         getGifsTrending()
             .then(gifs => {
-                setGifsTrending(gifs)
+                const gifsChunks = []
+                for (let i = 0; i < gifs.length; i += 7) {
+                    gifsChunks.push(gifs.slice(i, i + 7));
+                }
+                setGifsTrending(gifsChunks) /* Gifs Trending */
             })
     }, [])
 
+
     useEffect(() => {
-        console.log('EFECTO DEL HOOK: ', keyword, { keyword })
+        console.log('ARTISTS LOAD')
+        getArtists()
+        .then(artists =>{
+            console.log(artists)
+            const gifsChunks = []
+            for (let i = 0; i < artists.length-1; i += 3) { /* -1 en length porque estoy mostrando de a 3, se forman 7 array de 3 elementos cada uno */
+                gifsChunks.push(artists.slice(i, i + 3));
+            }
+            setArtists(gifsChunks)/* Artists */
+        })
+    }, [])
+
+    useEffect(() => {
         setLoading(true)
         //recupera keyword de localstorage si recibe null y en local storage no hay nada guardado entonces se solicitara en la peticion null, la api devolvera lo solicitado si el parametro recibido es null
         const keywordToUse = keyword || localStorage.getItem('lastKeyword') /* || 'messi' */
-        console.log('KeyWord Principal: ', keyword)
 
         getGifs({ keyword: keywordToUse })
             .then(gifs => {
@@ -42,5 +61,5 @@ export function useGifs({ keyword } = { keyword: null }) {
             })
     }, [keyword]) //efecto cada vez que keyword es modificado
 
-    return { loading, gifs, gifsTrending }
+    return { loading, gifs, gifsTrending, artists }
 }
