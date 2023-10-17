@@ -57,7 +57,7 @@ export function getGifsTrending() {
 }
 
 export function getArtists(){
-    const apiUrl = `https://giphy.com/api/v4/artists/?api_key=${apiKey}filter=&freelance=false&order=desc&sort=updatetime`
+    const apiUrl = `https://giphy.com/api/v4/artists/?api_key=${apiKey}filter=&freelance=false&order=desc` /* &sort=updatetime */ 
     return fetch (apiUrl)
     .then(res => res.json())
     .then(response =>{
