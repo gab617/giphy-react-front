@@ -1,0 +1,30 @@
+#Categories{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#categories{
+    display: flex;
+    flex-direction: column;
+    margin-right: 4em;
+}
+
+#categories li{
+    margin: 0;
+    padding: 0;
+}
+
+#categories li p{
+    margin: .2em;
+    padding: 0;
+    text-align: start;
+    cursor: pointer;
+}
+
+#subCategories ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Define 3 columnas de igual ancho */
+    grid-gap: 10px; /* Espacio entre las celdas */
+}

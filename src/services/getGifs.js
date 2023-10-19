@@ -30,7 +30,7 @@ export function getGifs({ keyword }) { //por defecto array vacio o keyword
             /* console.log(data) */ //10gifs por defecto para mostrar al inicio
             const gifs = data.map(image => {
                 const { images, title, id } = image
-                const { url } = images.downsized_medium
+                const { url } = images.preview_gif
                 return { title, id, url }
             })
             /*             console.log('GIFFS  ', gifs) */
@@ -56,18 +56,20 @@ export function getGifsTrending() {
         })
 }
 
-export function getArtists(){
-    const apiUrl = `https://giphy.com/api/v4/artists?api_key=${apiKey}&limit=14` /* &sort=updatetime */ 
-    return fetch (apiUrl)
-    .then(res => res.json())
-    .then(response =>{
-        const artists = response.results.map((artist) =>{
-            console.log(response)
-            const {display_name, id} = artist
-            const {avatar_url} = artist.user
-            const {url} = artist.featured_gif.images.preview_gif
-            return {id, display_name, avatar_url, url}
+
+export function getCategories() {
+    const apiUrl = `https://api.giphy.com/v1/gifs/categories?api_key=${apiKey}`
+    return fetch(apiUrl)
+        .then(res => res.json())
+        .then(response => {
+            const {data} = response
+            const categories = data.map(categ => {
+                const {name, name_encoded, subcategories} = categ
+                const {url} = categ.gif.images.preview_gif
+                return {name, name_encoded, url, subcategories}
+
+            })
+            return categories
         })
-        return artists
-    })
 }
+

@@ -4,13 +4,14 @@ import Home from './components/Home'
 import { Link, Route } from "wouter"
 import SearchResults from './components/SearchResults'
 import { GifsContextProvider } from './context/GifsContexs'
+import { Categories } from './components/Categories'
 
 /* Al iniciar la app el primer componente que va a renderizar es Home ya que se 
 encuentra en el path '/' Si la ruta cambiase a '/search seguido se una keyword valida
 Renderizaria en el cliente el componente SearchResults
 '*/
-const Servidor = () =>{
-  return(
+const Servidor = () => {
+  return (
     <h1>Hola servidor</h1>
   )
 }
@@ -18,6 +19,10 @@ const Servidor = () =>{
 function App() {
   return (
     <div className="App">
+      <Link to="/">
+        <button>Home</button>
+      </Link>
+      <Categories></Categories>
       <Route
         component={Home}
         path='/'

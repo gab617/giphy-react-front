@@ -7,7 +7,6 @@ import LastSearch from './LastSearch'
 import './style.css'
 import './Trending.css'
 import { Trending } from './Trending'
-import { Artists } from './Artists/Artists'
 
 
 const POPULAR_GIFS = ['Messi', 'Matrix', 'Venezuela', 'Condorito', 'Power Rangers']
@@ -16,7 +15,7 @@ export default function Home() {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation() //
 
-    const { loading, gifs, gifsTrending, artists } = useGifs()
+    const { loading, gifs, gifsTrending } = useGifs()
 
     const handleSubmit = evt => {
         evt.preventDefault()
@@ -61,12 +60,6 @@ export default function Home() {
                 />
             </div>
 
-            <div id='art-home'>
-                <h1>Artists</h1>
-                <Artists
-                    artists={artists}
-                />
-            </div>
 
 
 

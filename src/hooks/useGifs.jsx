@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react'
-import { getArtists, getGifs, getGifsTrending } from '../services/getGifs'
+import { getCategories, getGifs, getGifsTrending } from '../services/getGifs'
 /* LocalStorage utilizado para guardar la ultima keyword utilizada si existiese
 primera vez sera nulo, una vez guardado el dato en el localstorage
 a menos que sea reiniciada la app po codigo fuente o se borre el localstorage 
@@ -16,8 +16,7 @@ export function useGifs({ keyword } = { keyword: null }) {
     const [loading, setLoading] = useState(false)
     const [gifs, setGifs] = useState([])
     const [gifsTrending, setGifsTrending] = useState([])
-    const [artists, setArtists] = useState([])
-
+    const [categories, setCategories] = useState([])
 
     /* Me trae los links de categoria trending en partes de a 5 en este caso para mostrar de a 7 elementos */
     useEffect(() => {
@@ -33,19 +32,10 @@ export function useGifs({ keyword } = { keyword: null }) {
             })
     }, [])
 
-
     useEffect(() => {
-        console.log('ARTISTS LOAD')
-        getArtists()
-        .then(artists =>{
-            console.log(artists)
-            const gifsChunks = []
-            for (let i = 0; i < artists.length-1; i += 3) { /* -1 en length porque estoy mostrando de a 3, se forman 7 array de 3 elementos cada uno */
-                gifsChunks.push(artists.slice(i, i + 3));
-            }
-            setArtists(gifsChunks)/* Artists */
-        })
-    }, [])
+        getCategories()
+            .then(categs => setCategories(categs))
+    },[])
 
     useEffect(() => {
         setLoading(true)
@@ -61,5 +51,6 @@ export function useGifs({ keyword } = { keyword: null }) {
             })
     }, [keyword]) //efecto cada vez que keyword es modificado
 
-    return { loading, gifs, gifsTrending, artists }
+
+    return { loading, gifs, gifsTrending, categories }
 }
