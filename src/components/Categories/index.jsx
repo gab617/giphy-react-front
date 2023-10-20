@@ -24,39 +24,41 @@ export function Categories() {
 
     return (
         <div id="Categories">
-
-            <div>
-                <ul id="categories">
-                    <h2>Categories</h2>
-                    {categories && categories.map(cat => (
-                        <li
-                            onClick={() => onClickListCategories(cat.name)}
-                            key={cat.name}>
-                            <p>{cat.name}</p>
-                        </li>
-                    )
-                    )}
-                </ul>
-            </div>
-            <div id="subCategories">
-                <h1>{currentCategorie}</h1>
-
-                <ul>
-                    {
-                        subCategories && subCategories.map(subCat => (
-                            <>
-                                <li>
-                                    <div>
-                                        <Link to={`/search/${subCat.name}`}>
-                                            <h2>{subCat.name}</h2>
-                                        </Link>
-                                    </div>
-                                </li>
-                            </>
+            <div id="categories-content">
+                <div>
+                    <ul id="categories">
+                        <h2>Categories</h2>
+                        {categories && categories.map(cat => (
+                            <li
+                                onClick={() => onClickListCategories(cat.name)}
+                                key={cat.name}>
+                                <p>{cat.name}</p>
+                                {/* <img src={cat.url} alt="" /> */}
+                            </li>
                         )
                         )}
+                    </ul>
+                </div>
+                <div id="subCategories">
+                    <h1>{currentCategorie}</h1>
 
-                </ul>
+                    <ul>
+                        {
+                            subCategories && subCategories.map(subCat => (
+                                <>
+                                    <li>
+                                        <div>
+                                            <Link to={`/search/${subCat.name}`}>
+                                                <h2>{subCat.name}</h2>
+                                            </Link>
+                                        </div>
+                                    </li>
+                                </>
+                            )
+                            )}
+
+                    </ul>
+                </div>
             </div>
         </div>
     )
