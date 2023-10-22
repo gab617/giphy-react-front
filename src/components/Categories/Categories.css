@@ -1,6 +1,7 @@
 #Categories{
     display: flex;
     width: 80%;
+    height: 100%;
     justify-content: center;
     margin: 0 auto;
 }
@@ -24,11 +25,12 @@
 }
 
 #categories li p{
-    margin: .1em;
+    margin: 0em;
     padding: 0;
-    font-size: 1.5em;
+    font-size: 1.1em;
     text-align: start;
     cursor: pointer;
+
 }
 
 #subCategories{
@@ -37,13 +39,14 @@
 
 #subCategories ul{
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Define 3 columnas de igual ancho */
-    grid-gap: 10px; /* Espacio entre las celdas */
+    grid-template-columns: repeat(10, 1fr); /* Define 3 columnas de igual ancho */
 }
 
 #subCategories ul li{
+    height: auto;
+
     border: 1px solid #000; /* 1px de ancho, sólido y color negro (#000) */
-    margin: 5px; /* Espacio exterior para separar los divs */
+    margin: 1px; /* Espacio exterior para separar los divs */
     padding: 10px; /* Espacio interior para el contenido del div */
     cursor: pointer;
 }

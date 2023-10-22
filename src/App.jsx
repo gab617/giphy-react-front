@@ -22,7 +22,11 @@ function App() {
       <Link to="/">
         <button>Home</button>
       </Link>
-      <Categories></Categories>
+
+      <Link to='/categories'>
+        <button>Categories</button>
+      </Link>
+
       <Route
         component={Home}
         path='/'
@@ -35,6 +39,13 @@ function App() {
       <Route
         path='/access'
         component={Servidor} />
+
+      <Route
+        path='/categories'
+        component={Categories}
+      >
+
+      </Route>
     </div>
   )
 }
