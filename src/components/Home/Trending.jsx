@@ -44,8 +44,8 @@ export function Trending({ gifsTrending, loading }) {
                 </div>
             }
             <div className="carousel">
-                <button onClick={previousGif}>Anterior</button>
-                <button onClick={nextGif}>Siguiente</button>
+                <button className="btn1" onClick={previousGif}>Anterior</button>
+                <button className="btn1" onClick={nextGif}>Siguiente</button>
             </div>
         </div>
     )

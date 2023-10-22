@@ -4,7 +4,7 @@ import './Gif.css'
 /* Renderizado de un gif */
 function Gif({title, url, id, className=""}) {
     return (
-        <a  href={`#${id}`} className={`Gif`}>
+        <a  href={`#${id}`} className={`Gif fade-in`}>
             <img alt={title} src={url}/>
         </a>
     )

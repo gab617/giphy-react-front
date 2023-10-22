@@ -1,14 +1,18 @@
-export function Header (){
+import { Link } from "wouter";
+import './Header.css'
+export function Header() {
 
-    return(
+    return (
         <>
-            <header>
-                <nav>
-                    <ul>
+            <div id="Header">
+                <Link to="/">
+                    <button>Home</button>
+                </Link>
 
-                    </ul>
-                </nav>
-            </header>
+                <Link to='/categories'>
+                    <button>Categories</button>
+                </Link>
+            </div>
         </>
     )
 }

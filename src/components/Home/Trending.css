@@ -3,7 +3,7 @@
 /*     min-width: 80%;
     max-width: 81%; */
     overflow: hidden;
-    background: linear-gradient(45deg, rgba(255, 0, 0, 0.178), rgba(0, 0, 255, 0.315), rgba(1, 2, 19, 0.295), rgb(0, 0, 0));
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.178), rgba(0, 0, 255, 0.315), rgba(1, 2, 19, 0.295), rgb(255, 0, 0, 0.178));
     border-radius: 2em;
     position: relative;
     display: flex;
@@ -17,6 +17,7 @@
     padding: 0;
     margin: .3em;
 }
+
 
 #Trending ul {
     height: 100%;

@@ -5,6 +5,7 @@ import { Link, Route } from "wouter"
 import SearchResults from './components/SearchResults'
 import { GifsContextProvider } from './context/GifsContexs'
 import { Categories } from './components/Categories'
+import { Header } from './components/Home/Header/Header'
 
 /* Al iniciar la app el primer componente que va a renderizar es Home ya que se 
 encuentra en el path '/' Si la ruta cambiase a '/search seguido se una keyword valida
@@ -19,13 +20,11 @@ const Servidor = () => {
 function App() {
   return (
     <div className="App">
-      <Link to="/">
-        <button>Home</button>
-      </Link>
+      <Header>
 
-      <Link to='/categories'>
-        <button>Categories</button>
-      </Link>
+      </Header>
+
+
 
       <Route
         component={Home}

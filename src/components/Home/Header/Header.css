@@ -1,0 +1,35 @@
+#Header{
+    background: rgba(240, 128, 128, 0.199);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 2em;
+    padding: .3em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: .9em;
+    
+}
+
+#Header button{
+    width: 100%;
+    height: 3em;
+
+    
+}
+
+#Header button {
+    padding: .5em .5em;
+    background-color: #c933ff46;
+    color: #333;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: .2em;
+}
+
+#Header button:hover{
+    box-shadow: 0 0em 2em .9em rgba(98, 69, 228, 0.658);
+
+}
