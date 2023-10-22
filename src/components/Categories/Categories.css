@@ -22,16 +22,28 @@
 #categories li{
     margin: 0;
     padding: 0;
+    box-shadow: 2px .5px 1px rgba(255, 255, 255, 0.493);
+    margin-right: 1em;
+
+}
+#categories li:hover{
+    background:  rgba(255, 255, 255, 0.493);
+    
 }
 
 #categories li p{
     margin: 0em;
     padding: 0;
-    font-size: 1.1em;
+    font-size: 1.6em;
     text-align: start;
     cursor: pointer;
 
 }
+
+#categories li p:hover{
+    text-shadow: 2px .3px .1px rgba(255, 255, 255, 0.692);
+}
+
 
 #subCategories{
     width: 100%;
@@ -39,14 +51,22 @@
 
 #subCategories ul{
     display: grid;
-    grid-template-columns: repeat(10, 1fr); /* Define 3 columnas de igual ancho */
+    grid-template-columns: repeat(4, 1fr); /* Define 3 columnas de igual ancho */
 }
 
 #subCategories ul li{
     height: auto;
 
     border: 1px solid #000; /* 1px de ancho, sólido y color negro (#000) */
-    margin: 1px; /* Espacio exterior para separar los divs */
+    margin: .2em; /* Espacio exterior para separar los divs */
     padding: 10px; /* Espacio interior para el contenido del div */
     cursor: pointer;
 }
+
+
+#subCategories ul li:hover{
+    scale: 1.1;
+    box-shadow: 0 0em 9em 2em rgba(255, 255, 255, 0.74);
+    transition: .3s;
+}
+

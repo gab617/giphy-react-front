@@ -9,6 +9,13 @@ export function Categories() {
     console.log(categories)
     const [currentCategorie, setCurrentCategorie] = useState('')
     const [subCategories, setSubCatgs] = useState([])
+    const [hoverColor, setHoverColor] = useState(null);
+
+    const colors = ['#9300FF', '#DC00FF', '#6800FF', '#C733FF', '#6800FF'];
+
+    function colorRandom (){
+        return (colors[Math.floor(Math.random() * colors.length)])
+    }
 
     function onClickListCategories(name) {
         console.log(name)
@@ -44,17 +51,24 @@ export function Categories() {
 
                     <ul>
                         {
-                            subCategories && subCategories.map(subCat => (
-                                <>
-                                    <li>
-                                        <div>
-                                            <Link to={`/search/${subCat.name}`}>
+                            subCategories && subCategories.map(subCat => {
+                                const randomColor = colorRandom()
+                                
+                               return( <>
+                                    <Link to={`/search/${subCat.name}`}
+                                    >
+
+                                        <li
+                                        style={ {backgroundColor: randomColor} }
+                                        >
+                                            <div id="subcateg-container">
                                                 <h2>{subCat.name}</h2>
-                                            </Link>
-                                        </div>
-                                    </li>
-                                </>
-                            )
+                                            </div>
+
+                                        </li>
+                                    </Link>
+                                </>)
+                            }
                             )}
 
                     </ul>
