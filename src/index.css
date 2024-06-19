@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   background: linear-gradient(to bottom, #1900ff6b, #000263b2);
   /* 
@@ -24,4 +29,21 @@ body {
     opacity: 1;
     /* Llega a una opacidad de 1 para mostrar el componente */
   }
+}
+
+/* Definir la animación fade-out */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    /* Empieza con opacidad 1 para mostrar el componente */
+  }
+  to {
+    opacity: 0;
+    /* Llega a una opacidad de 0 para ocultar el componente */
+  }
+}
+
+/* Clase para aplicar la animación fade-out */
+.fade-out {
+  animation: fadeOut 0.9s ease-in forwards;
 }

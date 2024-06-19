@@ -7,10 +7,10 @@ function SearchResults({params}) {
     const { keyword } = params //params con Route-wouter con contenido de keyword
     const { loading,gifs } = useGifs({keyword})
 
-    if (loading) return <div className='loader'></div>
+    if (loading) return <div className='w-16 h-16 loader'></div>
     /* Se renderiza la lista de gifs mediante el componente ListOfGifs */
     return (
-        <div className='ListOfGifs'>
+        <div className=''>
             <ListOfGifs gifs={gifs}></ListOfGifs>
         </div>
     )

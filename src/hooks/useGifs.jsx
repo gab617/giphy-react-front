@@ -25,8 +25,8 @@ export function useGifs({ keyword } = { keyword: null }) {
         getGifsTrending()
             .then(gifs => {
                 const gifsChunks = []
-                for (let i = 0; i < gifs.length; i += 7) {
-                    gifsChunks.push(gifs.slice(i, i + 7));
+                for (let i = 0; i < gifs.length; i += 6) {
+                    gifsChunks.push(gifs.slice(i, i + 6));
                 }
                 setGifsTrending(gifsChunks) /* Gifs Trending */
             })

@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Gif.css'
 
 /* Renderizado de un gif */
-function Gif({title, url, id, className=""}) {
+function Gif({ title, url, id, className = "" }) {
+
+    const [loading, setLoading] = useState(true);
+
+    const handleImageLoaded = () => {
+        setLoading(false);
+    };
+
+
+
     return (
-        <a  href={`#${id}`} className={`Gif fade-in`}>
-            <img alt={title} src={url}/>
+        <a href={`#${id}`} className={` fade-in`}>{/* Gif */}
+            <img className={`w-full h-full`} alt={title} src={url} 
+             />
         </a>
     )
 }

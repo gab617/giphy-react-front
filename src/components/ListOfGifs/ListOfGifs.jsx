@@ -5,15 +5,22 @@ import './styles.css'
 function ListOfGifs({ gifs }) {
     console.log(gifs)
 
+
     return (
-        <div className='list-gifs'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
             {gifs.map(({ id, title, url }) => {//se obtienen esas propidedaes de cada objeto gif
-                return <Gif
-                    key={id}
-                    title={title}
-                    id={id}
-                    url={url} 
-                    />
+                
+                
+                return (
+                    <div className='p-1'>
+                        <Gif
+                            key={id}
+                            title={title}
+                            id={id}
+                            url={url}
+                        />
+                    </div>)
+
             })}
         </div>
     )

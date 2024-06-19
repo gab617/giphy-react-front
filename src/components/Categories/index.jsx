@@ -30,26 +30,27 @@ export function Categories() {
     }, [categories])
 
     return (
-        <div id="Categories">
-            <div id="categories-content">
+        <div className="md:text-2xl" id="Categories">
+            <div className="" id="UlCategories">{/* categories-content */}
                 <div>
-                    <ul id="categories">
-                        <h2>Categories</h2>
+                    <ul className="grid grid-cols-3 gap-1 text-center items-center w-95 m-auto mt-2 mb-2"  id="">{/* categories */}
                         {categories && categories.map(cat => (
                             <li
+                                className="h-full flex justify-center items-center cursor-pointer"
                                 onClick={() => onClickListCategories(cat.name)}
                                 key={cat.name}>
-                                <p>{cat.name}</p>
+                                <p className="font-bold">{cat.name}</p>
                                 {/* <img src={cat.url} alt="" /> */}
                             </li>
                         )
                         )}
                     </ul>
                 </div>
-                <div id="subCategories">
-                    <h1>{currentCategorie}</h1>
+                <div id="">{/* subCategories */}
+                    <h1 className="text-center mt-3 text-2xl">{currentCategorie}</h1>
+                    <p className="text-center">Subcategories</p>
 
-                    <ul>
+                    <ul className="grid grid-cols-3">
                         {
                             subCategories && subCategories.map(subCat => {
                                 const randomColor = colorRandom()
@@ -61,7 +62,7 @@ export function Categories() {
                                         <li
                                         style={ {backgroundColor: randomColor} }
                                         >
-                                            <div id="subcateg-container">
+                                            <div className="text-center font-bold cursor-pointer" id="">
                                                 <h2>{subCat.name}</h2>
                                             </div>
 

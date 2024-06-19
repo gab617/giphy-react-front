@@ -7,8 +7,8 @@ import ListOfGifs from '../ListOfGifs/ListOfGifs'
 function LastSearch({ gifs }) {
     console.log('Renderiza UltimaBusqueda: ', gifs)
     return (
-        <div id='LastSearch'>
-            <h3 className='last-search-h3'>Ultima busqueda</h3>
+        <div className='bg-black bg-opacity-30 rounded-lg mt-2' id=''>
+            <h3 className='mt-4 mb-4 text-2xl text-center'>Ultima busqueda</h3>
             <ListOfGifs gifs={gifs}></ListOfGifs>
             {/* se podrian editar los estilos de la lista de gifs en la home, pero por ahora se recicla el que ya esta creado */}
 {/*             <div className='gifsHome'>

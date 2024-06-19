@@ -20,7 +20,7 @@ para luego ser agregado a la url en el campo limit = -cantidad deseada de objeto
 
 
 export function getGifs({ keyword }) { //por defecto array vacio o keyword
-    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`
+    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=24&offset=0&rating=g&lang=en`
     /* const apiURLexpress = `http://localhost:3000/obtenerDatos/messi` */
     const apiURLexpressRenderServices = `https://giphy617.onrender.com/obtenerDatos/${keyword}` /* Api almacenada en render.com */
     return fetch(apiURLexpressRenderServices)
@@ -41,7 +41,7 @@ export function getGifs({ keyword }) { //por defecto array vacio o keyword
 /* la cantidad debe ser multiplo de los gifs q se mestran en pantalla */
 
 export function getGifsTrending() {
-    const apiUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=28`
+    const apiUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=30`
     return fetch(apiUrl)
         .then(res => res.json())
         .then(response => {

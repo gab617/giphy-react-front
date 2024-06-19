@@ -1,10 +1,9 @@
 .loader {
     animation: spinningColor 1.5s ease-in-out infinite;
-    margin: 50px auto;
-    border: 5px double #f0eff5;
+    margin: 5em auto;
+    border: .5em double #f0eff5;
     border-radius: 50%;
-    width: 500px;
-    height: 500px;
+
   }
   
   @keyframes spinningColor {

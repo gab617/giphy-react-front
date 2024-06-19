@@ -24,26 +24,36 @@ export function Trending({ gifsTrending, loading }) {
     };
 
     return (
-        <div id="Trending">
+        <div className="w-90 m-auto" id="">{/* Trending */}
             {
-                <div id="trending-cont" className="fade-in" >
+                <div id="" /* trending-cont */
+                    className=" 
+                        fade-in
+                        grid
+                        grid-cols-2
+                        gap-1
+                        md:grid-cols-3
+                        lg:grid-cols-6
+                    " >
                     {
                         gifsTrending[currentIndex] && gifsTrending[currentIndex].map(gif => {
                             return (
-                                <Gif
-                                    key={gif.id}
-                                    className={"fade-in"}
-                                    title={gif.title}
-                                    id={gif.id}
-                                    url={gif.url}
-                                />
+                                <div className="">
+                                    <Gif
+                                        key={gif.id}
+                                        className={"fade-in"}
+                                        title={gif.title}
+                                        id={gif.id}
+                                        url={gif.url}
+                                    />
+                                </div>
                             )
                         })
                     }
 
                 </div>
             }
-            <div className="carousel">
+            <div className="w-full m-1 text-center">
                 <button className="btn1" onClick={previousGif}>Anterior</button>
                 <button className="btn1" onClick={nextGif}>Siguiente</button>
             </div>

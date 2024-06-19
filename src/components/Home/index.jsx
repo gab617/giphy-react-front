@@ -10,7 +10,7 @@ import { Trending } from './Trending'
 import { FormSearch } from '../FormSearch/FormSearch'
 
 
-const POPULAR_GIFS = ['Messi', 'Matrix', 'Venezuela', 'Condorito', 'Power Rangers']
+const POPULAR_GIFS = ['Messi', 'Matrix', 'Venezuela', 'Condorito', 'Power Rangers', 'Gatitos']
 
 export default function Home() {
     const [keyword, setKeyword] = useState('')
@@ -31,7 +31,7 @@ export default function Home() {
 
 
     return (
-        <div className='Home'>
+        <div className='flex flex-col w-95 m-auto'>{/* Home */}
             <FormSearch
                 POPULAR_GIFS={POPULAR_GIFS}
                 handleSubmit={handleSubmit}
@@ -39,8 +39,8 @@ export default function Home() {
                 keyword={keyword}
             />
 
-            <div id='tr-home'>
-                <h1>Trending</h1>
+            <div className='bg-black bg-opacity-30 rounded-lg' id=''>
+                <h1 className='text-2xl mt-4 mb-4 text-white text-center'>Trending</h1>
                 <Trending
                     gifsTrending={gifsTrending}
                     loading={loading}

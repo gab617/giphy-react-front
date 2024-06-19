@@ -16,3 +16,8 @@
     box-sizing: border-box;
     /* Incluye el relleno en el ancho del elemento */
 }
+
+.Gif a{
+    width: 100%;
+    height: 100%;
+}
