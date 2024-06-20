@@ -7,12 +7,15 @@ function ListOfGifs({ gifs }) {
 
 
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
+        <div className='
+            grid grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-5'>
             {gifs.map(({ id, title, url }) => {//se obtienen esas propidedaes de cada objeto gif
                 
                 
                 return (
-                    <div className='p-1'>
+                    <div className='p-1 lg:flex lg:flex-col lg:justify-center lg:bg-black lg:bg-opacity-75'>
                         <Gif
                             key={id}
                             title={title}

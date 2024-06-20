@@ -17,9 +17,10 @@ export function FormSearch({ POPULAR_GIFS, handleSubmit, handleChange, keyword }
                 <ul className="
                     grid grid-cols-2 
                     md:grid-cols-3 
-                    lg:grid-flow-col
-                    lg:w-80
+                    lg:grid-cols-6
+                    lg:w-90
                     lg:m-auto
+                    xl:w-90
                     ">
                     
                     {POPULAR_GIFS.map((porpularGif) => (
@@ -41,6 +42,7 @@ export function FormSearch({ POPULAR_GIFS, handleSubmit, handleChange, keyword }
                                 hover:border-[#fff] 
                                 cursor-pointer transition
                                 w-full
+                                xl:text-xl                    
                                 ">
                                     {porpularGif}
 
