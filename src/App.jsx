@@ -7,11 +7,14 @@ import { GifsContextProvider } from './context/GifsContexs'
 import { Categories } from './components/Categories'
 import { Header } from './components/Home/Header/Header'
 
+
 /* Al iniciar la app el primer componente que va a renderizar es Home ya que se 
 encuentra en el path '/' Si la ruta cambiase a '/search seguido se una keyword valida
 Renderizaria en el cliente el componente SearchResults
 '*/
+
 const Servidor = () => {
+
   return (
     <h1>Hola servidor</h1>
   )

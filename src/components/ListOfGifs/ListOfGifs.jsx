@@ -1,32 +1,21 @@
-import React from 'react'
-import Gif from '../Gif'
-import './styles.css'
-/* Renderizado de Componentes Gif */
+import React, { useState } from "react";
+import Gif from "../Gif";
+import "./styles.css";
 function ListOfGifs({ gifs }) {
-    console.log(gifs)
 
-
-    return (
-        <div className='
-            grid grid-cols-2 
-            md:grid-cols-3 
-            lg:grid-cols-5'>
-            {gifs.map(({ id, title, url }) => {//se obtienen esas propidedaes de cada objeto gif
-                
-                
-                return (
-                    <div className='p-1 lg:flex lg:flex-col lg:justify-center lg:bg-black lg:bg-opacity-75'>
-                        <Gif
-                            key={id}
-                            title={title}
-                            id={id}
-                            url={url}
-                        />
-                    </div>)
-
-            })}
-        </div>
-    )
+  return (
+    <div
+      className="w-1/2"
+    >
+      {gifs.map(({ id, title, url }) => {
+        return (
+          <div className="p-1 w-full lg:flex lg:flex-col overflow-hidden lg:bg-black lg:bg-opacity-75">
+            <Gif key={id} title={title} id={id} url={url} />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
-export default ListOfGifs
+export default ListOfGifs;

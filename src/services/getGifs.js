@@ -1,8 +1,7 @@
 /* Podria pasarlo a un servicio externo en un servidor. gefGifs */
-
 /* La apiKey no deberia estar disponible en el cliente, 
 esta tambien definida en el servidor */
-const apiKey = '1BJzitRRvqnzYnkIDeWd5EsKfyfixQSm'
+const apiKey = "1BJzitRRvqnzYnkIDeWd5EsKfyfixQSm";/* APY KEY EXPUESTA, TENGO PROBLEMAS CON TOMAR LAS VARIABLES DE ENTORNO PARA ESTE PROYECTO. */
 
 /* Servicio que: mediante una peticion fetch, recibe una promesa de la API de gifs
 en formato json los datos de 10 gifs(definida cantidad en el url de la peticion)
@@ -20,7 +19,7 @@ para luego ser agregado a la url en el campo limit = -cantidad deseada de objeto
 
 
 export function getGifs({ keyword }) { //por defecto array vacio o keyword
-    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=24&offset=0&rating=g&lang=en`
+    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=50&offset=0&rating=g&lang=en`
     /* const apiURLexpress = `http://localhost:3000/obtenerDatos/messi` */
     const apiURLexpressRenderServices = `https://giphy617.onrender.com/obtenerDatos/${keyword}` /* Api almacenada en render.com */
     return fetch(apiURLexpressRenderServices)

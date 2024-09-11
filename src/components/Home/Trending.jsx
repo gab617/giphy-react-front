@@ -5,6 +5,7 @@ import Gif from "../Gif";
 
 export function Trending({ gifsTrending, loading }) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const bgs = ["yellow","blue","pink","red","purple"]
 
     const previousGif = () => {
         let newIndex = currentIndex === 0 ? gifsTrending.length - 1 : currentIndex - 1
@@ -38,7 +39,7 @@ export function Trending({ gifsTrending, loading }) {
                     {
                         gifsTrending[currentIndex] && gifsTrending[currentIndex].map(gif => {
                             return (
-                                <div className="lg:flex lg:flex-col lg:justify-center lg:bg-black lg:bg-opacity-50 lg:rounded-xl">
+                                <div className={`lg:flex lg:flex-col lg:justify-center lg:bg-black lg:bg-opacity-50 lg:rounded-sm`}>
                                     <Gif
                                         key={gif.id}
                                         className={"fade-in"}
