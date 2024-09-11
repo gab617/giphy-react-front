@@ -9,7 +9,7 @@ function SearchResults({ params }) {
 
   if (loading) return <div className="w-16 h-16 loader"></div>;
   return (
-    <div className="flex w-80 mx-auto">
+    <div className="flex lg:w-80 mx-auto listGifs gap-1">
       {gifsDivided &&
         gifsDivided.map((gifChunk) => {
           return (

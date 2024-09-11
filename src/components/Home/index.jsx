@@ -2,9 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { useGifs } from "../../hooks/useGifs";
-import Gif from "../Gif";
 import LastSearch from "./LastSearch";
-import "./style.css";
 import "./Trending.css";
 import { Trending } from "./Trending";
 import { FormSearch } from "../FormSearch/FormSearch";
@@ -12,8 +10,8 @@ import { FormSearch } from "../FormSearch/FormSearch";
 const POPULAR_GIFS = [
   "Messi",
   "Matrix",
-  "Venezuela",
-  "Condorito",
+  "Entretenimiento",
+  "Anime",
   "Power Rangers",
   "Gatitos",
 ];
@@ -44,12 +42,30 @@ export default function Home() {
         keyword={keyword}
       />
 
-      <div className="bg-black bg-opacity-30 rounded-lg" id="">
-        <h1 className="text-2xl mt-4 mb-4 text-white text-center">Trending</h1>
+      <div className=" rounded-lg" id="">
+        <div className="flex lg:w-80 mx-auto items-center gap-2">
+          <div className="mt-1">
+            <svg
+              fill="none"
+              stroke="cyan"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+              height="1.5em"
+              width="1.5em"
+            >
+              <path d="M23 6l-9.5 9.5-5-5L1 18" />
+              <path d="M17 6h6v6" />
+            </svg>
+          </div>
+
+          <h1 className=" text-2xl mt-4 mb-4 text-white ">Trending</h1>
+        </div>
         <Trending gifsTrending={gifsTrending} loading={loading} />
       </div>
 
-      <div className="w-80 mx-auto">
+      <div className="lg:w-80 mx-auto listGifs rounded-xl p-1">
         <LastSearch gifsDivided={gifsDivided} />
       </div>
     </div>

@@ -10,3 +10,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Sombra ligera */
 }
+
+.listGifs {
+    background: rgb(239, 0, 255);
+    background: linear-gradient(
+      15deg,
+      rgba(239, 0, 255, 1) 0%,
+      rgba(236, 249, 1, 1) 35%,
+      rgba(227, 0, 69, 1) 100%
+    );
+  }
+  

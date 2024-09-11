@@ -25,7 +25,7 @@ export function Trending({ gifsTrending, loading }) {
     };
 
     return (
-        <div className="w-95 m-auto" id="">{/* Trending */}
+        <div className="m-auto" id="">{/* Trending */}
             {
                 <div id="" /* trending-cont */
                     className=" 
@@ -35,11 +35,20 @@ export function Trending({ gifsTrending, loading }) {
                         gap-1
                         md:grid-cols-3
                         lg:grid-cols-6
+                        lg:w-80
+                        lg:mx-auto
                     " >
                     {
                         gifsTrending[currentIndex] && gifsTrending[currentIndex].map(gif => {
+                            const randomBg = bgs[Math.floor(Math.random() * bgs.length)];
                             return (
-                                <div className={`lg:flex lg:flex-col lg:justify-center lg:bg-black lg:bg-opacity-50 lg:rounded-sm`}>
+                                <div className={`flex flex-col justify-center lg:bg-opacity-60 lg:rounded-lg`}
+                                style={
+                                    {
+                                        backgroundColor: randomBg
+                                    }
+                                } 
+                                >
                                     <Gif
                                         key={gif.id}
                                         className={"fade-in"}
@@ -55,8 +64,8 @@ export function Trending({ gifsTrending, loading }) {
                 </div>
             }
             <div className="w-full m-1 text-center p-1">
-                <button className="btn1" onClick={previousGif}>Back</button>
-                <button className="btn1" onClick={nextGif}>Next</button>
+                <button className="btn-popular" onClick={previousGif}>Anterior</button>
+                <button className="btn-popular" onClick={nextGif}>Siguiente</button>
             </div>
         </div>
     )

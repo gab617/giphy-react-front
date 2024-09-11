@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Gif from "../Gif";
-import "./styles.css";
 function ListOfGifs({ gifs }) {
 
   return (
@@ -9,7 +8,7 @@ function ListOfGifs({ gifs }) {
     >
       {gifs.map(({ id, title, url }) => {
         return (
-          <div className="p-1 w-full lg:flex lg:flex-col overflow-hidden lg:bg-black lg:bg-opacity-75">
+          <div className="mb-1 w-full lg:flex lg:flex-col overflow-hidden lg:bg-black lg:bg-opacity-75">
             <Gif key={id} title={title} id={id} url={url} />
           </div>
         );

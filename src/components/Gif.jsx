@@ -14,7 +14,7 @@ function Gif({ title, url, id, className = "" }) {
 
     return (
         <a href={`#${id}`} className={` fade-in`}>{/* Gif */}
-            <img className={`w-full h-auto`} alt={title} src={url} 
+            <img className={`w-full max-h-[22rem]`} alt={title} src={url} 
              />
         </a>
     )

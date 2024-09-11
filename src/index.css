@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  background: linear-gradient(to bottom, #1900ff6b, #000263b2);
-  /* 
+  background: rgb(25, 25, 25);
+  background: linear-gradient(
+    15deg,
+    rgba(25, 25, 25, 1) 0%,
+    rgba(64, 59, 60, 1) 100%
+  ); /* 
       El gradiente va de arriba hacia abajo (to bottom).
       #000000 es el color negro.
       #00FF00 es el color verde.
@@ -15,7 +18,6 @@ body {
   background-attachment: fixed;
   /* Fija el fondo para que no se desplace con el contenido */
 }
-
 
 .fade-in {
   opacity: 0;

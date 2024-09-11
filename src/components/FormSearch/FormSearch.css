@@ -1,17 +1,74 @@
-.btn1{
-    background-color: rgb(255, 196, 237);
-    display: inline-block;
-    padding: .6em;
-    margin: 1px;
-    background-color: #ff00ea65;
+/* From Uiverse.io by ShadowShahriar */ 
+.btn-popular {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
+    position: relative;
+    padding: 1em 2em;
+    border-radius: 15px;
+    border: 0;
+    background-color: #2121215d;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;  
-}
+    z-index: 2;
+   }
 
-.btn1:hover{
-    background-color: #001aff65;
-    
-}
+   .btn-popular:hover{
+    background: rgb(242,156,80);
+background: linear-gradient(15deg, rgba(242,156,80,1) 0%, rgba(126,0,222,1) 100%);
+    color:black
+   }
+   
+   .btn-popular::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+           #488cfb,
+           #29dbbc,
+           #ddf505,
+           #ff9f0e,
+           #e440bb,
+           #655adc,
+           #488cfb
+       );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+   }
+   
+   .btn-popular:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   .btn-popular,
+   .btn-popular::after {
+    box-sizing: border-box;
+   }
+   
+   .btn-popular:active {
+    --border-width: 5px;
+
+   }

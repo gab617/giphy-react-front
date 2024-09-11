@@ -8,19 +8,19 @@ export function FormSearch({ POPULAR_GIFS, handleSubmit, handleChange, keyword }
                 <form className='mt-2 flex justify-center'/* formHome */ onSubmit={handleSubmit}>
                     <input
                         placeholder='Search a gif here...'
-                        className='p-2' onChange={handleChange}
+                        className='p-3' onChange={handleChange}
                         type="text" value={keyword} />
-                    <button className="bg-violet-700 bg-opacity-70 p-2 ">Go!</button>
+                    <button className="bg-violet-700 bg-opacity-70 p-2 text-xl">Go!</button>
                 </form>
 
-                <h3 className="mt-2 mb-2 text-xl text-center">Gifs populares</h3>
+                <h3 className="mt-2 mb-2 lg:text-3xl text-center text-white">Búsquedas populares</h3>
                 <ul className="
                     grid grid-cols-2 
                     md:grid-cols-3 
                     lg:grid-cols-6
                     lg:w-90
                     lg:m-auto
-                    xl:w-90
+                    xl:w-80
                     ">
                     
                     {POPULAR_GIFS.map((porpularGif) => (
@@ -35,8 +35,7 @@ export function FormSearch({ POPULAR_GIFS, handleSubmit, handleChange, keyword }
                         '>{/* link-popular-gif */}
                             <Link to={`/search/${porpularGif}`}>
                                 <button className="
-                                bg-[#6d4ae963] border-2 
-                                border-[#3e3e3e] rounded-lg 
+                                btn-popular
                                 text-white 
                                 px-3 py-2 
                                 hover:border-[#fff] 
