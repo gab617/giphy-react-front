@@ -19,10 +19,9 @@ para luego ser agregado a la url en el campo limit = -cantidad deseada de objeto
 
 
 export function getGifs({ keyword }) { //por defecto array vacio o keyword
-    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=50&offset=0&rating=g&lang=en`
-    /* const apiURLexpress = `http://localhost:3000/obtenerDatos/messi` */
+    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=48&offset=0&rating=g&lang=en`
     const apiURLexpressRenderServices = `https://giphy617.onrender.com/obtenerDatos/${keyword}` /* Api almacenada en render.com */
-    return fetch(apiURLexpressRenderServices)
+    return fetch(apiURL)
         .then(res => res.json())
         .then(response => {
             const { data } = response
